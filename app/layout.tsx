@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shelby Atlas — Explore the Protocol City",
     description: "A living neon city built on Aptos. Explore 7 districts, connect your wallet, and discover the Shelby ecosystem.",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.jpg", width: 1568, height: 784 }],
     type: "website",
     siteName: "Shelby Atlas",
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shelby Atlas — Explore the Protocol City",
     description: "A living neon city built on Aptos. 7 districts to explore. Connect wallet. Discover Shelby.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
