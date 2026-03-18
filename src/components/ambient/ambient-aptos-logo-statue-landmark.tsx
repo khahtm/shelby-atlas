@@ -37,10 +37,8 @@ export function AmbientAptosLogoStatueLandmark() {
       const logoY = y - 100;
 
       // Outer glow behind the logo
-      g.circle(x, logoY, 68);
+      g.circle(x, logoY, 72);
       g.fill({ color: 0x4fc1e9, alpha: 0.03 + glow * 0.04 });
-      g.circle(x, logoY, 62);
-      g.fill({ color: 0x4fc1e9, alpha: 0.02 + glow * 0.02 });
 
       // Pedestal
       const pw = 50;
@@ -103,13 +101,13 @@ export function AmbientAptosLogoStatueLandmark() {
       <pixiGraphics draw={initDraw} ref={gfxRef} />
       {logoTexture && (
         <pixiSprite
-          ref={(node: Sprite | null) => { if (node) spriteRef.current = node; }}
+          ref={(node: Sprite | null) => { spriteRef.current = node; }}
           texture={logoTexture}
           anchor={0.5}
           x={STATUE_POS.x}
           y={STATUE_POS.y - 100}
-          width={110}
-          height={110}
+          width={112}
+          height={112}
         />
       )}
       <pixiText
