@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Shelby Atlas color palette */
+  --bg-deep: #0a0e1a;
+  --bg-surface: #111827;
+  --bg-card: #1a2340;
+
+  /* District colors */
+  --furnace: #ff6b35;
+  --furnace-accent: #ff9f1c;
+  --fiber: #00e5ff;
+  --fiber-accent: #18ffff;
+  --mint: #76ff03;
+  --mint-accent: #b2ff59;
+  --watchtower: #e040fb;
+  --watchtower-accent: #ea80fc;
+  --docks: #ffab00;
+  --docks-accent: #ffd740;
+  --workshop: #69f0ae;
+  --workshop-accent: #b9f6ca;
+
+  /* UI colors */
+  --text-primary: #e8ecf4;
+  --text-secondary: #a0aec0;
+  --text-muted: #7a8599;
+  --border-glow: rgba(0, 229, 255, 0.3);
+  --bg-surface: #131a2e;
+  --glass-bg: #131a2ed9;
+  --glass-border: #00f0ff26;
+  --cyan: #00f0ff;
+
+  /* Fonts */
+  --font-pixel: var(--font-pixel);
+  --font-mono-pixel: var(--font-mono-pixel);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--bg-deep);
+  --color-foreground: var(--text-primary);
+  --color-surface: var(--bg-surface);
+  --color-card: var(--bg-card);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-mono-pixel), monospace;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+}
+
+/* Pixel font headings */
+.font-pixel {
+  font-family: var(--font-pixel), monospace;
+}
+
+.font-mono-pixel {
+  font-family: var(--font-mono-pixel), monospace;
+}
+
+.font-body {
+  font-family: var(--font-body), "Inter", sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
 }

@@ -9,7 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@aptos-labs/ts-sdk": "^5.2.1",
+    "@aptos-labs/wallet-adapter-react": "^8.3.1",
+    "@pixi/particle-emitter": "^5.0.10",
+    "@pixi/react": "^8.0.5",
+    "gsap": "^3.14.2",
     "next": "16.1.7",
+    "pixi-viewport": "^6.0.3",
+    "pixi.js": "^8.17.1",
     "react": "19.2.3",
     "react-dom": "19.2.3"
   },
