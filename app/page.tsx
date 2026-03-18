@@ -11,6 +11,7 @@ import { InfoPanelDistrictOverlay } from "@/src/components/ui/info-panel-distric
 import { DistrictHoverTooltipOverlay } from "@/src/components/ui/district-hover-tooltip-overlay";
 import { OnboardingStepByStepTourOverlay } from "@/src/components/ui/onboarding-step-by-step-tour-overlay";
 import { MapControlsHintBottomLeft } from "@/src/components/ui/map-controls-hint-bottom-left";
+import { MockTestnetTransactionsFeed } from "@/src/components/ui/mock-testnet-transactions-feed";
 
 const AtlasScene = dynamic(
   () => import("@/src/components/canvas/atlas-scene"),
@@ -35,6 +36,7 @@ export default function Home() {
         <InfoPanelDistrictOverlay />
         <DistrictHoverTooltipOverlay />
         <OnboardingStepByStepTourOverlay />
+        <MockTestnetTransactionsFeed />
         <MapControlsHintBottomLeft />
       </main>
     </AtlasProvider>
