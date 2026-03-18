@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useEffect, useState } from "react";
 import { extend, useTick } from "@pixi/react";
-import { Graphics, Sprite, Text, TextStyle, Texture } from "pixi.js";
+import { Graphics, Sprite, Text, TextStyle, Texture, Assets } from "pixi.js";
 import { toScreen } from "@/src/utils/isometric-helpers";
 
 extend({ Graphics, Sprite, Text });
@@ -15,6 +15,14 @@ export function AmbientAptosLogoStatueLandmark() {
   const gfxRef = useRef<Graphics | null>(null);
   const spriteRef = useRef<Sprite | null>(null);
   const glowRef = useRef(0);
+  const [logoTexture, setLogoTexture] = useState<Texture | null>(null);
+
+  // Load the logo texture properly via Assets
+  useEffect(() => {
+    Assets.load("/aptos-logo.png").then((tex: Texture) => {
+      setLogoTexture(tex);
+    });
+  }, []);
 
   useTick((ticker) => {
     glowRef.current += ticker.deltaTime * 0.02;
@@ -93,15 +101,17 @@ export function AmbientAptosLogoStatueLandmark() {
   return (
     <>
       <pixiGraphics draw={initDraw} ref={gfxRef} />
-      <pixiSprite
-        ref={(node: Sprite | null) => { if (node) spriteRef.current = node; }}
-        texture={Texture.from("/aptos-logo.png")}
-        anchor={0.5}
-        x={STATUE_POS.x}
-        y={STATUE_POS.y - 100}
-        width={110}
-        height={110}
-      />
+      {logoTexture && (
+        <pixiSprite
+          ref={(node: Sprite | null) => { if (node) spriteRef.current = node; }}
+          texture={logoTexture}
+          anchor={0.5}
+          x={STATUE_POS.x}
+          y={STATUE_POS.y - 100}
+          width={110}
+          height={110}
+        />
+      )}
       <pixiText
         text="APTOS"
         style={labelStyle}
