@@ -52,7 +52,7 @@ function generateProps(): Prop[] {
       const roll = rng();
       if (roll > 0.12) continue;
 
-      const pos = toScreen(col, row);
+      const pos = toScreen(col + 0.5, row + 0.5);
       const isBuilding = rng() > 0.45;
       const neon = NEON_COLORS[Math.floor(rng() * NEON_COLORS.length)];
       const phase = rng() * Math.PI * 2;
@@ -82,7 +82,7 @@ const PROPS = generateProps();
 /** Draw building with pulsing neon glow */
 function drawBuilding(g: Graphics, p: Prop, glowAlpha: number) {
   const bw = 22;
-  const bh = 12;
+  const bh = 22; // bh must equal bw for edges to align with isometric grid (2:1 ratio)
   const h = p.height;
 
   // Left face
